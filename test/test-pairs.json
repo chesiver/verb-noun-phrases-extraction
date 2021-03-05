@@ -65,9 +65,16 @@
         "sentence": "create task to buy ticket for Pinnacle as a gift and set a reminder to call the guy from pyramid systems at 3:30pm",
         "expected": [
             "create task",
-            "buy ticket",
+            "buy ticket for Pinnacle as a gift",
             "set a reminder",
             "call the guy from pyramid systems"
+        ]
+    },
+    {
+        "sentence": "create a task with send for a demo as the subject",
+        "expected": [
+            "create a task",
+            "send for a demo as the subject"
         ]
     }
 ]
