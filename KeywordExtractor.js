@@ -149,22 +149,6 @@ class KeywordExtractor {
         let trees = this.getPossibleSubjects(chunked);
         trees = this.removeTags(trees);
         return trees;
-        console.log(trees)
-        for(let i = 0; i < trees.length; i++) {
-            if (trees[i].trim().includes('[VP')) {
-                if (trees[i].split(' ').length >= longest ) {
-                    longest = trees[i].split(' ').length;
-                    longestIndex = i;
-                }
-            }
-        }
-        if (longestIndex === -1) {
-            return '';
-        }
-
-
-        formattedSentence = trees[longestIndex]
-        return this.formatSubject(formattedSentence);
     }
 }
 module.exports = KeywordExtractor;
