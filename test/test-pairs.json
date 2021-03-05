@@ -76,5 +76,27 @@
             "create a task",
             "send for a demo as the subject"
         ]
+    },
+    {
+        "sentence": "create task ask pinnacle to fly to Seattle",
+        "expected": [
+            "create task",
+            "ask pinnacle",
+            "fly to Seattle"
+        ]
+    },
+    {
+        "sentence": "create a reminder that is called buy eggs at 5pm",
+        "expected": [
+            "create a reminder",
+            "buy eggs"
+        ]
+    },
+    {
+        "sentence": "as the next steps, call support to escalate the critical SRS",
+        "expected": [
+            "call support",
+            "escalate the critical SRS"
+        ]
     }
 ]
