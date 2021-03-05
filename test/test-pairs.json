@@ -98,5 +98,13 @@
             "call support",
             "escalate the critical SRS"
         ]
+    },
+    {
+        "sentence": "Asked her for time next week for design call with Jason and got apptmt for next Thurs at 11 am our time",
+        "expected": [
+            "Asked her for time next week for design",
+            "call with Jason",
+            "got apptmt for next Thurs"
+        ]
     }
 ]

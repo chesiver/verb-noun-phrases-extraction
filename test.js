@@ -51,7 +51,7 @@ let sentence = 'create a task to make a proposal at 1pm tomorrow';
 // sentence = "as the next steps, call support to escalate the critical SRS"
 // sentence = 'create a task to plan for a demo next week'
 // sentence = 'create a task to plan for a demo'
-// sentence = 'Asked her for time next week for design call w/ Jason and got apptmt for next Thurs at 11 am our time'
+sentence = 'Asked her for time next week for design call with Jason and got apptmt for next Thurs at 11 am our time'
 
 let a = KeywordExtractor.extractSubject(sentence);
 console.log(a);
