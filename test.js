@@ -17,7 +17,7 @@ sentence = 'show the task details where organizing a meeting with pinnacle syste
 // sentence = 'create reminder to call amy'; // amy is 'N'
 // sentence = 'create task due on 9/10/2020 called draw up proposal' //proposal is JJ
 // sentence = 'get me the details for the task buy myself eggs' // not work... how to break ties? 
-sentence = 'set a reminder to call the guy from pyramid systems at 3:30pm'
+// sentence = 'set a reminder to call the guy from pyramid systems at 3:30pm'
 // sentence = 'create task to create proposal for pyramid llc'
 // sentence = 'create task to buy ticket for Pinnacle as a gift and set a reminder to call the guy from pyramid systems at 3:30pm'
 // sentence = 'create task to buy ticket for Pinnacle as a gift'
@@ -54,7 +54,7 @@ sentence = 'set a reminder to call the guy from pyramid systems at 3:30pm'
 // sentence = "as the next steps, call support to escalate the critical SRS"
 // sentence = 'create a task to plan for a demo next week'
 // sentence = 'create a task to plan for a demo'
-sentence = 'Asked her for time next week for design call w/ Jason and got apptmt for next Thurs at 11 am our time'
+// sentence = 'Asked her for time next week for design call w/ Jason and got apptmt for next Thurs at 11 am our time'
 
 let a = KeywordExtractor.extractSubject(sentence);
 console.log(a);
