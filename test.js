@@ -5,9 +5,9 @@ const KeywordExtractor = require('./KeywordExtractor')
 // console.log(tokenizer.tokenize('remind me buy eggs next monday'));
 
 let sentence = 'create a task to make a proposal at 1pm tomorrow';
-sentence = 'get tasks with the subject organize a meeting with pinnacle'
+// sentence = 'get tasks with the subject organize a meeting with pinnacle'
 // sentence = "get tasks with the subject organize pinnacle's planning meeting with pinnacle"
-sentence = 'get task where the subject is send john his forms'
+// sentence = 'get task where the subject is send john his forms'
 // sentence = 'create a reminder to buy eggs next monday';
 // sentence = 'get task called follow up with pinnacle' // not work 
 // sentence = 'create reminder to call john at 2pm next week'

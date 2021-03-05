@@ -106,6 +106,7 @@ class KeywordExtractor {
      */
     static extractSubject(sentence) {
         // sentence = sentence.trim().toLowerCase();
+        console.log(sentence)
         let formattedSentence = this.formatSentence(sentence)
         console.log(formattedSentence)
         const NP = {

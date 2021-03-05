@@ -23,4 +23,24 @@ describe('Extraction Results Verification: ', () => {
             'send john his forms'
         ]);
     });
+    it('4', () => {
+        const sentence = 'create a reminder to buy eggs next monday'
+        assert.deepStrictEqual(KeywordExtractor.extractSubject(sentence), [
+            'create a reminder',
+            'buy eggs next monday'
+        ]);
+    });
+    it('5', () => {
+        const sentence = 'create reminder to call john at 2pm next week'
+        assert.deepStrictEqual(KeywordExtractor.extractSubject(sentence), [
+            'create reminder',
+            'call john'
+        ]);
+    });
+    it('6', () => {
+        const sentence = 'show the task details where organizing a meeting with pinnacle systems is the subject and london is the location'
+        assert.deepStrictEqual(KeywordExtractor.extractSubject(sentence), [
+            'show the task details'
+        ]);
+    });
 });
