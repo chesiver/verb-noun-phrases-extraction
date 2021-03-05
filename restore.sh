@@ -1,2 +1,2 @@
-npm uninstall natural
-npm install natural@^4.0.0
+rm -r ./node_modules/natural/lib/natural/brill_pos_tagger/
+cp -r ./original_brill_pos_tagger ./node_modules/natural/lib/natural/brill_pos_tagger
