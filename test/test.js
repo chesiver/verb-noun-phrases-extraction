@@ -43,4 +43,11 @@ describe('Extraction Results Verification: ', () => {
             'show the task details'
         ]);
     });
+    it('7', () => {
+        const sentence = 'get me the details for the task buy myself eggs'
+        assert.deepStrictEqual(KeywordExtractor.extractSubject(sentence), [
+            'get me the details for the task',
+            'buy myself eggs'
+        ]);
+    });
 });
