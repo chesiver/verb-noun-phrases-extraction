@@ -1,0 +1,73 @@
+[
+    {
+        "sentence": "create a task to make a proposal at 1pm tomorrow",
+        "expected": [
+            "create a task",
+            "make a proposal"
+        ]
+    },
+    {
+        "sentence": "get tasks with the subject organize a meeting with pinnacle",
+        "expected": [
+            "get tasks with the subject",
+            "organize a meeting with pinnacle"
+        ]
+    },
+    {
+        "sentence": "get task where the subject is send john his forms",
+        "expected": [
+            "get task",
+            "send john his forms"
+        ]
+    },
+    {
+        "sentence": "create a reminder to buy eggs next monday",
+        "expected": [
+            "create a reminder",
+            "buy eggs next monday"
+        ]
+    },
+    {
+        "sentence": "create reminder to call john at 2pm next week",
+        "expected": [
+            "create reminder",
+            "call john"
+        ]
+    },
+    {
+        "sentence": "show the task details where organizing a meeting with pinnacle systems is the subject and london is the location",
+        "expected": [
+            "show the task details"
+        ]
+    },
+    {
+        "sentence": "create task due on 9/10/2020 called draw up proposal",
+        "expected": [
+            "create task",
+            "draw up proposal"
+        ]
+    },
+    {
+        "sentence": "get me the details for the task buy myself eggs",
+        "expected": [
+            "get me the details for the task",
+            "buy myself eggs"
+        ]
+    },
+    {
+        "sentence": "set a reminder to call the guy from pyramid systems at 3:30pm",
+        "expected": [
+            "set a reminder",
+            "call the guy from pyramid systems"
+        ]
+    },
+    {
+        "sentence": "create task to buy ticket for Pinnacle as a gift and set a reminder to call the guy from pyramid systems at 3:30pm",
+        "expected": [
+            "create task",
+            "buy ticket",
+            "set a reminder",
+            "call the guy from pyramid systems"
+        ]
+    }
+]
