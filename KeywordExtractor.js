@@ -25,6 +25,11 @@ class KeywordExtractor {
         return taggedWords;
     }
 
+    /**
+     * 
+     * @param {*} sentence plain string
+     * output a formatted tagged sentence recogizable for chunker
+     */
     static formatSentence(sentence) {
         const taggedWords = this.tagSentence(sentence);
         let formattedSentence = '';
@@ -36,6 +41,9 @@ class KeywordExtractor {
         return formattedSentence.trim();
     }
 
+    /**
+     * Split chunked results (just a string). Extract a list of "[VP ... ]"
+     */
     static getPossibleSubjects(chunked) {
         let vpStart = chunked.indexOf('[VP');
         if (vpStart === -1) {
@@ -70,6 +78,9 @@ class KeywordExtractor {
         return subject;
     }
 
+    /**
+     * remove square brackets && tags of splitted chuck
+     */
     static removeTags(trees) {
         for (let i = 0; i < trees.length; i++) {
             trees[i] = trees[i].replace(/\[[^ ]* /g, '') // remove left hand chunk eg. [VP
