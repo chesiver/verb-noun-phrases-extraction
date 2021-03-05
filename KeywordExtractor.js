@@ -143,8 +143,6 @@ class KeywordExtractor {
         const rules = [NP, PP, PPN, VP]
 
         let chunked = chunker.chunk(formattedSentence, rules);
-        let longest = 0;
-        let longestIndex = -1;
         console.log(chunked)
         let trees = this.getPossibleSubjects(chunked);
         trees = this.removeTags(trees);
