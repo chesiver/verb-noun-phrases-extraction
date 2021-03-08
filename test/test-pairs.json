@@ -3,7 +3,7 @@
         "sentence": "create a task to make a proposal at 1pm tomorrow",
         "expected": [
             "create a task",
-            "make a proposal"
+            "make a proposal at 1pm tomorrow"
         ]
     },
     {
@@ -31,7 +31,7 @@
         "sentence": "create reminder to call john at 2pm next week",
         "expected": [
             "create reminder",
-            "call john"
+            "call john at 2pm next week"
         ]
     },
     {
@@ -66,7 +66,7 @@
         "sentence": "set a reminder to call the guy from pyramid systems at 3:30pm",
         "expected": [
             "set a reminder",
-            "call the guy from pyramid systems"
+            "call the guy from pyramid systems at 3 30pm"
         ]
     },
     {
@@ -75,7 +75,7 @@
             "create task",
             "buy ticket for Pinnacle as a gift",
             "set a reminder",
-            "call the guy from pyramid systems"
+            "call the guy from pyramid systems at 3 30pm"
         ]
     },
     {
@@ -97,7 +97,7 @@
         "sentence": "create a reminder that is called buy eggs at 5pm",
         "expected": [
             "create a reminder",
-            "buy eggs"
+            "buy eggs at 5pm"
         ]
     },
     {
@@ -112,7 +112,7 @@
         "expected": [
             "Asked her for time next week for design",
             "call with Jason",
-            "got apptmt for next Thurs"
+            "got apptmt for next Thurs at 11"
         ]
     }
 ]

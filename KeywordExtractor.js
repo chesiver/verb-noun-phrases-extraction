@@ -112,7 +112,7 @@ class KeywordExtractor {
         const NP = {
             ruleType: 'tokens',
             // pattern: '[ { tag:/DT|JJ|VBG|PRP|NN.*?/ } ]+',
-            pattern: '[ {tag:/DT/} ]? [ {tag:/JJ/} ]* [ {tag:/PRP/} ]* [ {tag:/VBG|NNP|NNS|NN.*?/} ]+',
+            pattern: '[ {tag:/DT/} ]? [ {tag:/JJ/} ]* [ {tag:/PRP/} ]* [ {tag:/VBG|NNP|CD|NNS|NN.*?/} ]+',
             // pattern: '[ {tag:/DT/} ]? [ {tag:/JJ/} ]* [ {tag:/IN/} ]* [ {tag:/PRP/} ]* [ {tag:/VBG|NNP|NNS|NN.*?/} ]+',
             result: 'NP'
         };
