@@ -35,9 +35,17 @@
         ]
     },
     {
-        "sentence": "show the task details where organizing a meeting with pinnacle systems is the subject and london is the location",
+        "sentence": "create the task send the note to pinnacle",
         "expected": [
-            "show the task details"
+            "create the task",
+            "send the note"
+        ]
+    },
+    {
+        "sentence": "show the task details where organize a meeting with pinnacle systems is the subject and london is the location",
+        "expected": [
+            "show the task details",
+            "organize a meeting with pinnacle systems"
         ]
     },
     {

@@ -11,7 +11,7 @@ let sentence = 'create a task to make a proposal at 1pm tomorrow';
 // sentence = 'create reminder to call john at 2pm next week'
 // sentence = 'create the task send the note to pinnacle'
 
-// sentence = 'show the task details where organizing a meeting with pinnacle systems is the subject and london is the location'
+// sentence = 'show the task details where organize a meeting with pinnacle systems is the subject and london is the location'
 // sentence = 'create reminder to call amy'; // amy is 'N'
 // sentence = 'create task due on 9/10/2020 called draw up proposal' //proposal is JJ
 // sentence = 'get me the details for the task buy myself eggs' // not work... how to break ties? 
