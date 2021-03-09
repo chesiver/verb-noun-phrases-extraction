@@ -1,5 +1,6 @@
 const natural = require('natural');
 const chunker = require('pos-chunker');
+const abbreviation = require('./abbreviation.json');
 class KeywordExtractor {
 
     static tokenizeSentence(sentences) {
@@ -31,6 +32,9 @@ class KeywordExtractor {
      * output a formatted tagged sentence recogizable for chunker
      */
     static formatSentence(sentence) {
+        for (const [s1, s2] of Object.entries(abbreviation)) {
+            sentence = sentence.replace(new RegExp(s1, 'g'), s2);
+        }
         const taggedWords = this.tagSentence(sentence);
         let formattedSentence = '';
         for (const [_, tagged] of Object.entries(taggedWords)) {
