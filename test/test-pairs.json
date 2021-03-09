@@ -108,11 +108,27 @@
         ]
     },
     {
+        "sentence": "sent meeting invite to Daisy and Jason to schedule our call",
+        "expected": [
+            "sent meeting",
+            "invite to Daisy and Jason",
+            "schedule our call"
+        ]
+    },
+    {
         "sentence": "Asked her for time next week for design call with Jason and got apptmt for next Thurs at 11 am our time",
         "expected": [
             "Asked her for time next week for design",
             "call with Jason",
             "got apptmt for next Thurs at 11"
+        ]
+    },
+    {
+        "sentence": "Need to set up a follow up call with her and engage Garbo",
+        "expected": [
+            "set up a follow",
+            "call with her",
+            "engage Garbo"
         ]
     }
 ]

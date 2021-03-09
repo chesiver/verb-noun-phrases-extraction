@@ -254,6 +254,16 @@ var ruleTemplates = {
     "function": default_predicate,
     "window": [0, 0],
     "nrParameters": 0
+  },
+  "IS-HER-POSSESIVE": {
+    "function": is_her_possesive,
+    "window": [0, 1],
+    "nrParameters": 0
+  },
+  "IS-HER-PERSONAL": {
+    "function": is_her_personal,
+    "window": [0, 1],
+    "nrParameters": 0
   }
 };
 
@@ -748,6 +758,19 @@ function prev_2_tag_is(sentence, i, parameter) {
 
 function default_predicate(sentence, i, parameter) {
   return(false);
+}
+
+// Special Checks 
+function is_her_possesive(sentence, i, parameter) {
+  const res = sentence.taggedWords[i].token.toLowerCase() === 'her'
+    && sentence.taggedWords[i+1].tag.startsWith('NN');;
+  return res;
+}
+
+function is_her_personal(sentence, i, parameter) {
+  const res = sentence.taggedWords[i].token.toLowerCase() === 'her'
+    && !sentence.taggedWords[i+1].tag.startsWith('NN');;
+  return res;
 }
 
 module.exports = ruleTemplates;

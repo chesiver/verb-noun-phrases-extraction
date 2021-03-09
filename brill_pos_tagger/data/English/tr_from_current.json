@@ -13,6 +13,10 @@
         "NN JJ CURRENT-WORD-ENDS-WITH al",
         "NNS JJ CURRENT-WORD-ENDS-WITH al",
         "NN NNS CURRENT-WORD-ENDS-WITH s",
-        "NN VBG CURRENT-WORD-ENDS-WITH ing"
+        "NN VBG CURRENT-WORD-ENDS-WITH ing",
+
+        "VB NN PREV-TAG PRP$",
+        "PRP$ PRP IS-HER-PERSONAL",
+        "PRP PRP$ IS-HER-POSSESIVE"
     ]
 }

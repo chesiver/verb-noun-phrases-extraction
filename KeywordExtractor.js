@@ -39,7 +39,11 @@ class KeywordExtractor {
         let formattedSentence = '';
         for (const [_, tagged] of Object.entries(taggedWords)) {
             for (let i = 0; i < tagged.length; i++) {
-                formattedSentence += tagged[i].token + '/' + tagged[i].tag.replace(/\$/g, '') + ' '
+                formattedSentence += tagged[i].token + '/'
+                    + tagged[i].tag
+                        // chunk lib has some bug so here we don't use PRP$, instead rename it to be PRS
+                        .replace(/PRP\$/g, 'PRS') 
+                    + ' ';
             }
         }
         return formattedSentence.trim();
@@ -113,10 +117,20 @@ class KeywordExtractor {
         console.log(sentence)
         let formattedSentence = this.formatSentence(sentence)
         console.log(formattedSentence)
+        const N = {
+            ruleType: 'tokens',
+            pattern: '[ {tag:/VBG|NNP|CD|NNS|NN.*?|PRP/} ]',
+            result: 'N'
+        };
+        const NCN = {
+            ruleType: 'tokens',
+            pattern: '[{ chunk:/N/ }] [{tag:/CC/}] [ { chunk:/N/ } ]',
+            result: 'NCN'
+        }
         const NP = {
             ruleType: 'tokens',
             // pattern: '[ { tag:/DT|JJ|VBG|PRP|NN.*?/ } ]+',
-            pattern: '[ {tag:/DT/} ]? [ {tag:/JJ/} ]* [ {tag:/PRP/} ]* [ {tag:/VBG|NNP|CD|NNS|NN.*?/} ]+',
+            pattern: String.raw`[ {tag:/DT/} ]? [ {tag:/JJ/} ]* [ {tag:/PRS/} ]? [{ chunk:/N|NCN/ }]`,
             // pattern: '[ {tag:/DT/} ]? [ {tag:/JJ/} ]* [ {tag:/IN/} ]* [ {tag:/PRP/} ]* [ {tag:/VBG|NNP|NNS|NN.*?/} ]+',
             result: 'NP'
         };
@@ -146,8 +160,7 @@ class KeywordExtractor {
             // pattern: '[ { tag:/VB.?/ } ] [ { chunk:/NP|PPN/ } ]+',
             // pattern: ' [ { tag:/VB.?/ } ] ([ { chunk:/PPN/} ][ { chunk:/NP/} ])* [ { chunk:/NP/} ]* [ { chunk:/NP|PPN/ } ]',
             pattern: String.raw`[ { tag:/VB.?/; word:/\b(?!(am|is|are|was|were|be)\b)\w+/ } ]
-            [ {tag:/PRP/} ]*
-            [ { chunk:/NP|PPN/ } ]+`,
+            [ {tag:/PRS/} ]? [ { chunk:/NP|PPN/ } ]+`,
             // pattern: '[ { tag:/VB.?/ } ] [ { chunk:/PPN/} ]? [ { chunk:/NP/} ]+ [ { chunk:/PPN/} ]?',
             // pattern: '[ { tag:/VB.?/ } ] [ { chunk:/PP/ } ]' ,
             // [ { word:have } ] (?=[ { word:/dinner|lunch/ } ])
@@ -159,7 +172,7 @@ class KeywordExtractor {
 
         // grammar = "NP: {<VB.*>?<RB>?<DT>?<PRP.*>?<NN.*>?<IN>?<DT>?<JJ.*>*<NN.*>*<IN.*>?<NN.*>?}"
 
-        const rules = [NP, PP, PPN, VP]
+        const rules = [N, NCN, NP, PP, PPN, VP]
 
         let chunked = chunker.chunk(formattedSentence, rules);
         console.log(chunked)
