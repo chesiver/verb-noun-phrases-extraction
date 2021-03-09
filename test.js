@@ -58,13 +58,15 @@ let sentence = 'create a task to make a proposal at 1pm tomorrow';
 
 // sentence = 'sent meeting invite to Daisy and Jason to schedule our call'
 // sentence = 'Asked her for time next week for design call w/ Jason and got apptmt for next Thurs at 11 am our time'
-sentence = 'Need to set up a follow up call with her and engage Garbo'
+// sentence = 'Perhaps interested in Autostore where we are able to label everything and send it to folders'
+// sentence = 'Need to set up a follow up call with her and engage Garbo'
+// sentence = 'sent Daisy meeting invite for AR today'
 
 /**
  * Problematic ones
  */
 // sentence = 'Set the lvl of expectation that she values our product and she is open to a copier w/ color, scanning and fax option';
-
+// sentence = 'spoke to Daisy as she is the office mgr'
 
 let a = KeywordExtractor.extractSubject(sentence);
 console.log(a);
