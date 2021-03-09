@@ -170,6 +170,12 @@ class KeywordExtractor {
             result: 'VP'
         };
 
+        // const DEF = {
+        //     ruleType: 'tokens',
+        //     pattern: '[ { chunk:NP } ] [ { word:/be/am/are/is/was/were/} ] [ { chunk:NP } ]',
+        //     result: 'DEF'
+        // }
+
         // grammar = "NP: {<VB.*>?<RB>?<DT>?<PRP.*>?<NN.*>?<IN>?<DT>?<JJ.*>*<NN.*>*<IN.*>?<NN.*>?}"
 
         const rules = [N, NCN, NP, PP, PPN, VP]
