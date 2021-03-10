@@ -17,6 +17,8 @@
         "VBP NN PREV-TAG DT",
         "VB NN PREV-TAG DT",
 
-        "NN VB NEXT-TAG DT"
+        "NN VB NEXT-TAG DT",
+        "NN VB SURROUNDTAG TO NN",
+        "NN VB SURROUNDTAG TO PRP$"
     ]
 }
