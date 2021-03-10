@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "single": "bash replace.sh && node test.js",
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "bash replace.sh && ./node_modules/mocha/bin/mocha"
   },
   "author": "",
   "license": "ISC",
