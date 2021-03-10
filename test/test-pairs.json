@@ -164,5 +164,12 @@
             "catch him via email",
             "get this upgrade early"
         ]
+    },
+    {
+        "sentence": "called Mickie and got an AR for Monday at 2:30 pm with office mgr",
+        "expected": [
+            "called Mickie",
+            "got an AR for Monday at 2 30 pm with office mgr"
+        ]
     }
 ]
