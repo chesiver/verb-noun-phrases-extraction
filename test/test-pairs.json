@@ -178,5 +178,11 @@
             "called for Michelle after my email yesterday",
             "left message with staff"
         ]
+    },
+    {
+        "sentence": "The Oracle Consulting, COE, Licence and ProdDev team has submitted a joint recommendation to the client for the migration of the Siebel to Cloud solution",
+        "expected": [
+            "submitted a joint recommendation to the client for the migration of the Siebel to Cloud solution"
+        ]
     }
 ]
