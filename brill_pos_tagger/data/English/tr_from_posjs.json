@@ -21,6 +21,7 @@
     "VB NN PREV-WORD-IS these",
     "VB NN PREV-WORD-IS those",
     "NN VB PREV-WORD-IS have",
+    "NN VB NEXT-TAG NN",
     "NN VB PREV-TAG TO"
   ]
 }
