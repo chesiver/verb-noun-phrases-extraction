@@ -38,7 +38,7 @@
         "sentence": "create the task send the note to pinnacle",
         "expected": [
             "create the task",
-            "send the note"
+            "send the note to pinnacle"
         ]
     },
     {

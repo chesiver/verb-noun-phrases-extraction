@@ -8,15 +8,15 @@
         "NNS URL CURRENT-WORD-IS-URL YES",
         "NNP URL CURRENT-WORD-IS-URL YES",
         "NNPS URL CURRENT-WORD-IS-URL YES",
-        "NN VBN CURRENT-WORD-ENDS-WITH ed",
-        "* RB CURRENT-WORD-ENDS-WITH ly",
-        "NN JJ CURRENT-WORD-ENDS-WITH al",
-        "NNS JJ CURRENT-WORD-ENDS-WITH al",
-        "NN NNS CURRENT-WORD-ENDS-WITH s",
-        "NN VBG CURRENT-WORD-ENDS-WITH ing",
 
         "VB NN PREV-TAG PRP$",
         "PRP$ PRP IS-HER-PERSONAL",
-        "PRP PRP$ IS-HER-POSSESIVE"
+        "PRP PRP$ IS-HER-POSSESIVE",
+
+        "VBD NN PREV-TAG DT",
+        "VBP NN PREV-TAG DT",
+        "VB NN PREV-TAG DT",
+
+        "NN VB NEXT-TAG DT"
     ]
 }

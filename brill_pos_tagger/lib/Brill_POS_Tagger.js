@@ -59,7 +59,7 @@ Brill_POS_Tagger.prototype.applyRules = function (taggedSentence, sentence) {
           rule.apply(taggedSentence, i);
         }
       } else {
-        rule.apply(taggedSentence, i);
+        // rule.apply(taggedSentence, i);
       }
     }, this);
   }
