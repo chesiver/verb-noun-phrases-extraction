@@ -171,5 +171,12 @@
             "called Mickie",
             "got an AR for Monday at 2 30 pm with office mgr"
         ]
+    },
+    {
+        "sentence": "called for Michelle after my email yesterday but she wasn't free so left message with staff",
+        "expected": [
+            "called for Michelle after my email yesterday",
+            "left message with staff"
+        ]
     }
 ]

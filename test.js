@@ -65,6 +65,7 @@ let sentence = 'create a task to make a proposal at 1pm tomorrow';
 // sentence = 'emailed Alex for intro discussion for upgrade'
 // sentence = 'Hope to catch him via email and try to get this upgrade early'
 // sentence = 'called Mickie and got an AR for Monday at 2:30 pm with office mgr'
+sentence = "called for Michelle after my email yesterday but she wasn't free so left message with staff"
 
 /**
  * Problematic ones
@@ -74,6 +75,7 @@ let sentence = 'create a task to make a proposal at 1pm tomorrow';
 // sentence = 'called and finally spoke to someone important'
 // sentence = 'Called to see if I can get in touch with Alex, but lead dc’d after being on hold'
 // sentence = 'Setting task for 90 day follow up and reattempt AR'
+// sentence = "called for Michelle since she said she would be back today but wasn't in until noon today until like 4ish"
 
 let a = KeywordExtractor.extractSubject(sentence);
 console.log(a);
