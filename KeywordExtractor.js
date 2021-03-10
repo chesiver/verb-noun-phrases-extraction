@@ -119,7 +119,7 @@ class KeywordExtractor {
         console.log(formattedSentence)
         const N = {
             ruleType: 'tokens',
-            pattern: '[ {tag:/VBG|NNP|CD|NNS|NN.*?|PRP/} ]',
+            pattern: '[ {tag:/VBG|NNP|CD|NNS|NN.*?/} ]',
             result: 'N'
         };
         const NCN = {
@@ -130,7 +130,7 @@ class KeywordExtractor {
         const NP = {
             ruleType: 'tokens',
             // pattern: '[ { tag:/DT|JJ|VBG|PRP|NN.*?/ } ]+',
-            pattern: String.raw`[ {tag:/DT/} ]? [ {tag:/JJ/} ]* [ {tag:/PRS/} ]? [{ chunk:/N|NCN/ }]`,
+            pattern: String.raw`[ {tag:/DT/} ]? [ {tag:/JJ/} ]* [ {tag:/PRS/} ]? ([{ chunk:/N|NCN/ }] | [{ tag: /PRP/}])`,
             // pattern: '[ {tag:/DT/} ]? [ {tag:/JJ/} ]* [ {tag:/IN/} ]* [ {tag:/PRP/} ]* [ {tag:/VBG|NNP|NNS|NN.*?/} ]+',
             result: 'NP'
         };

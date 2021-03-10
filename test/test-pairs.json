@@ -124,6 +124,13 @@
         ]
     },
     {
+        "sentence": "Set the lvl of expectation that she values our product and she is open to a copier w/ color, scanning and fax option",
+        "expected": [
+            "Set the lvl of expectation that she",
+            "values our product"
+        ]
+    },
+    {
         "sentence": "Perhaps interested in Autostore where we are able to label everything and send it to folders",
         "expected": [
             "label everything",
