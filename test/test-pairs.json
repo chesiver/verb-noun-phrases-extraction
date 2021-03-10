@@ -151,5 +151,18 @@
             "sent Daisy meeting",
             "invite for AR today"
         ]
+    },
+    {
+        "sentence": "emailed Alex for intro discussion for upgrade",
+        "expected": [
+            "emailed Alex for intro discussion"
+        ]
+    },
+    {
+        "sentence": "Hope to catch him via email and try to get this upgrade early",
+        "expected": [
+            "catch him via email",
+            "get this upgrade early"
+        ]
     }
 ]
