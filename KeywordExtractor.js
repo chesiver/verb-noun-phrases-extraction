@@ -154,12 +154,17 @@ class KeywordExtractor {
 
         // [ { chunk:/NP/} ]
         // [ { chunk:/PPN/} ]
+        const V = {
+            ruleType: 'tokens',
+            pattern: String.raw`[ { tag:/VB([^G]|\b)/; word:/\b(?!(am|is|are|was|were|be)\b)\w+/ } ]`,
+            result: 'V'
+        }
 
         const VP = {
             ruleType: 'tokens',
             // pattern: '[ { tag:/VB.?/ } ] [ { chunk:/NP|PPN/ } ]+',
             // pattern: ' [ { tag:/VB.?/ } ] ([ { chunk:/PPN/} ][ { chunk:/NP/} ])* [ { chunk:/NP/} ]* [ { chunk:/NP|PPN/ } ]',
-            pattern: String.raw`[ { tag:/VB.?/; word:/\b(?!(am|is|are|was|were|be)\b)\w+/ } ]
+            pattern: String.raw`[ { chunk:/V/ } ]
             [ {tag:/PRS/} ]? [ { chunk:/NP|PPN/ } ]+
             [ {tag:/RB.*/} ]*`,
             // pattern: '[ { tag:/VB.?/ } ] [ { chunk:/PPN/} ]? [ { chunk:/NP/} ]+ [ { chunk:/PPN/} ]?',
@@ -179,7 +184,7 @@ class KeywordExtractor {
 
         // grammar = "NP: {<VB.*>?<RB>?<DT>?<PRP.*>?<NN.*>?<IN>?<DT>?<JJ.*>*<NN.*>*<IN.*>?<NN.*>?}"
 
-        const rules = [N, NCN, NP, PP, PPN, VP]
+        const rules = [V, N, NCN, NP, PP, PPN, VP]
 
         let chunked = chunker.chunk(formattedSentence, rules);
         console.log(chunked)
