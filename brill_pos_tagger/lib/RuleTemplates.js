@@ -763,13 +763,17 @@ function default_predicate(sentence, i, parameter) {
 // Special Checks 
 function is_her_possesive(sentence, i, parameter) {
   const res = sentence.taggedWords[i].token.toLowerCase() === 'her'
-    && sentence.taggedWords[i+1].tag.startsWith('NN');;
+    && i < sentence.taggedWords.length - 1
+    && sentence.taggedWords[i+1].tag.startsWith('NN');
   return res;
 }
 
 function is_her_personal(sentence, i, parameter) {
   const res = sentence.taggedWords[i].token.toLowerCase() === 'her'
-    && !sentence.taggedWords[i+1].tag.startsWith('NN');;
+    && !(
+      i < sentence.taggedWords.length - 1
+      && sentence.taggedWords[i+1].tag.startsWith('NN')
+    )
   return res;
 }
 
