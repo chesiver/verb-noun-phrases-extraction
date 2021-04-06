@@ -55,18 +55,24 @@ let sentence = 'create a task to make a proposal at 1pm tomorrow';
 /**
  * From confluence page
  */
+sentences = [
+    'sent meeting invite to Daisy and Jason to schedule our call',
+    'called Daisy and spoke to her. called Daisy and spoke to her. Asked her for time next week for design call w/ Jason and got apptmt for next Thurs at 11 am our time',
+    'had AR with Daisy. Was a good success. Set the lvl of expectation that she values our product and she is open to a copier w/ color, scanning and fax option. Perhaps interested in Autostore where we are able to label everything and send it to folders. Need to set up a follow up call with her and engage Garbo',
+    'sent Daisy meeting invite for AR today',
+    'spoke to Daisy as she is the office mgr. She agreed to an AR for tomorrow at 3:30 pm central time, 2:30 el paso time. Send her meeting invite at primaverahomehealth@gmail.com',
+    'called and spoke to Andrea. Said Daisy is office mgr and she tried to reach her but was not free. Got my # and will have her call me abt leo.',
+    'called and finally spoke to someone important. Her name was Sierra. Lef',
+    'called for Alex since no response via email still. Kathie tried to get him but he was in a meeting with dr. Will pass my info along again.',
+    'called for Alex. Not in so left message with staff.',
+    'emailed Alex for intro discussion for upgrade.',
+]
 
-// sentence = 'sent meeting invite to Daisy and Jason to schedule our call'
-// sentence = 'Asked her for time next week for design call w/ Jason and got apptmt for next Thurs at 11 am our time'
-// sentence = 'Perhaps interested in Autostore where we are able to label everything and send it to folders'
-// sentence = 'Need to set up a follow up call with her and engage Garbo'
-// sentence = 'sent Daisy meeting invite for AR today'
-// sentence = 'Set the lvl of expectation that she values our product and she is open to a copier w/ color, scanning and fax option';
-// sentence = 'emailed Alex for intro discussion for upgrade'
-// sentence = 'Hope to catch him via email and try to get this upgrade early'
-// sentence = 'called Mickie and got an AR for Monday at 2:30 pm with office mgr'
-// sentence = "called for Michelle after my email yesterday but she wasn't free so left message with staff"
-sentence = 'The Oracle Consulting, COE, Licence and ProdDev team has submitted a joint recommendation to the client for the migration of the Siebel to Cloud solution'
+for (const sentence of sentences) {
+    const a = KeywordExtractor.extractSubject(sentence);
+    console.log(a);
+    console.log('-----------------')
+}
 
 /**
  * Problematic ones
@@ -79,5 +85,3 @@ sentence = 'The Oracle Consulting, COE, Licence and ProdDev team has submitted a
 // sentence = "called for Michelle since she said she would be back today but wasn't in until noon today until like 4ish"
 // sentence = "called and reached out to office staff to re-intro myself and ask for Michelle as it seems she's office mgr."
 // sentence = 'Next Steps to meet w/ Brian Utrup to present high level proposal to start project in EMEA in Nov 2019'
-let a = KeywordExtractor.extractSubject(sentence);
-console.log(a);
