@@ -26,9 +26,12 @@ class KeywordExtractor {
         const tagger = new natural.BrillPOSTagger(lexicon, ruleSetDefault, ruleSetCondition);
         const tokenizedSentence = this.tokenizeWord(sentence);
         const taggedWords = tagger.tag(tokenizedSentence);
-        // look up avg perceptron tagger
+        /**
+         * Look up avg perceptron tagger.
+         * This aims to provide a more accurate tag for words not in lexicon file instead of 
+         * assigning default category to them.
+         */
         const avg_taggedWords = new Map(avg_tagger.tag(tokenizedSentence));
-        console.log('avg_taggedWords', avg_taggedWords)
         for (const item of taggedWords.taggedWords) {
             if (!lexicon.isExist(item.token) && item.tag !== avg_taggedWords.get(item.token)) {
                 if (info) console.log('Replacement: ', item.token, item.tag, avg_taggedWords.get(item.token))
