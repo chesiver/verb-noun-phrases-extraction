@@ -57,7 +57,7 @@ let sentence = 'create a task to make a proposal at 1pm tomorrow';
  */
 sentences = [
     'sent meeting invite to Daisy and Jason to schedule our call',
-    'called Daisy and spoke to her. called Daisy and spoke to her. Asked her for time next week for design call w/ Jason and got apptmt for next Thurs at 11 am our time',
+    'called Daisy and spoke to her. Asked her for time next week for design call w/ Jason and got apptmt for next Thurs at 11 am our time',
     'had AR with Daisy. Was a good success. Set the lvl of expectation that she values our product and she is open to a copier w/ color, scanning and fax option. Perhaps interested in Autostore where we are able to label everything and send it to folders. Need to set up a follow up call with her and engage Garbo',
     'sent Daisy meeting invite for AR today',
     'spoke to Daisy as she is the office mgr. She agreed to an AR for tomorrow at 3:30 pm central time, 2:30 el paso time. Send her meeting invite at primaverahomehealth@gmail.com',
@@ -66,6 +66,11 @@ sentences = [
     'called for Alex since no response via email still. Kathie tried to get him but he was in a meeting with dr. Will pass my info along again.',
     'called for Alex. Not in so left message with staff.',
     'emailed Alex for intro discussion for upgrade.',
+    'called and reached out for Alex, but he wasn’t in the office. Hope to catch him via email and try to get this upgrade early',
+    'new account acquired from Carmen. Called to see if I can get in touch with Alex, but lead dc’d after being on hold.',
+    'Spoke with Mike - was unwilling to continue in scheduling an AR. Setting task for 90 day follow up and reattempt AR.',
+    'had a successful AR with Micki. She said she would like something faster maybe and maybe smaller. (But doesn\'t seem possible cuz desktop is other alternative)',
+    'called Mickie and got an AR for Monday at 2:30 pm with office mgr. ',
 ]
 
 for (const sentence of sentences) {
