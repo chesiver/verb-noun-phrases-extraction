@@ -1,6 +1,9 @@
 const natural = require('natural');
 const chunker = require('pos-chunker');
 const abbreviation = require('./abbreviation.json');
+const { PerceptronTagger } = require('./avg_percep_tagger/src/PerceptronTagger');
+
+const avg_tagger = new PerceptronTagger(true);
 class KeywordExtractor {
 
     static tokenizeSentence(sentences) {
@@ -13,7 +16,7 @@ class KeywordExtractor {
         return tokenizer.tokenize(sentence);
     }
 
-    static tagSentence(sentence) {
+    static tagSentence(sentence, info = true) {
         const language = "EN"
         const defaultCategory = 'NN';
         const defaultCategoryCapitalized = 'NNP';
@@ -23,6 +26,15 @@ class KeywordExtractor {
         const tagger = new natural.BrillPOSTagger(lexicon, ruleSetDefault, ruleSetCondition);
         const tokenizedSentence = this.tokenizeWord(sentence);
         const taggedWords = tagger.tag(tokenizedSentence);
+        // look up avg perceptron tagger
+        const avg_taggedWords = new Map(avg_tagger.tag(tokenizedSentence));
+        console.log('avg_taggedWords', avg_taggedWords)
+        for (const item of taggedWords.taggedWords) {
+            if (!lexicon.isExist(item.token) && item.tag !== avg_taggedWords.get(item.token)) {
+                if (info) console.log('Replacement: ', item.token, item.tag, avg_taggedWords.get(item.token))
+                item.tag = avg_taggedWords.get(item.token);
+            }
+        }
         return taggedWords;
     }
 
