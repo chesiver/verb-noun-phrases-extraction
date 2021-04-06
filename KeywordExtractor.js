@@ -175,7 +175,7 @@ class KeywordExtractor {
         // [ { chunk:/PPN/} ]
         const V = {
             ruleType: 'tokens',
-            pattern: String.raw`[ { tag:/VB([^G]|\b)/; word:/\b(?!(am|is|are|was|were|be)\b)\w+/ } ]`,
+            pattern: String.raw`[ { tag:/VB([^G]|\b)/; word:/\b(?!(am|is|are|was|were|be|Am|Is|Was|Were|Be)\b)\w+/ } ]`,
             result: 'V'
         }
 
