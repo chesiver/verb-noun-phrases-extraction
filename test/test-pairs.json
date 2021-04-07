@@ -66,7 +66,7 @@
         "sentence": "set a reminder to call the guy from pyramid systems at 3:30pm",
         "expected": [
             "set a reminder",
-            "call the guy from pyramid systems at 3 30pm"
+            "call the guy from pyramid systems at 3:30pm"
         ]
     },
     {
@@ -75,7 +75,7 @@
             "create task",
             "buy ticket for Pinnacle as a gift",
             "set a reminder",
-            "call the guy from pyramid systems at 3 30pm"
+            "call the guy from pyramid systems at 3:30pm"
         ]
     },
     {
@@ -169,7 +169,7 @@
         "sentence": "called Mickie and got an AR for Monday at 2:30 pm with office mgr",
         "expected": [
             "called Mickie",
-            "got an AR for Monday at 2 30 pm with office mgr"
+            "got an AR for Monday at 2:30 pm with office mgr"
         ]
     },
     {

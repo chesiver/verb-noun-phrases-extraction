@@ -12,7 +12,9 @@ class KeywordExtractor {
     }
 
     static tokenizeWord(sentence) {
-        const tokenizer = new natural.WordTokenizer();
+        const tokenizer = new natural.RegexpTokenizer({
+            pattern: /([A-zÀ-ÿ-0-9._:]+|.|!|\?|'|"|:|;|,|-)/i
+        });
         return tokenizer.tokenize(sentence);
     }
 
@@ -25,7 +27,9 @@ class KeywordExtractor {
         const ruleSetDefault = new natural.RuleSet('EN');
         const tagger = new natural.BrillPOSTagger(lexicon, ruleSetDefault, ruleSetCondition);
         const tokenizedSentence = this.tokenizeWord(sentence);
+        // console.log('tokenizedSentence', tokenizedSentence);
         const taggedWords = tagger.tag(tokenizedSentence);
+        // console.log('taggedWords', taggedWords);
         /**
          * Look up avg perceptron tagger.
          * This aims to provide a more accurate tag for words not in lexicon file instead of 
