@@ -13,7 +13,7 @@ class KeywordExtractor {
 
     static tokenizeWord(sentence) {
         const tokenizer = new natural.RegexpTokenizer({
-            pattern: /([A-zÀ-ÿ-0-9._:]+|.|!|\?|'|"|:|;|,|-)/i
+            pattern: /([A-zÀ-ÿ-0-9_:-]+|.|!|\?|'|"|;|,)/i
         });
         return tokenizer.tokenize(sentence);
     }
