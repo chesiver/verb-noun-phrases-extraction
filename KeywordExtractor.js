@@ -35,7 +35,8 @@ class KeywordExtractor {
         for (const item of taggedWords.taggedWords) {
             if (
                 !lexicon.isExist(item.token) 
-                && !lexicon.isExist(item.token.toLowerCase()) 
+                && !lexicon.isExist(item.token.toLowerCase())
+                && item.tag != 'CD'
                 && item.tag !== avg_taggedWords.get(item.token)
             ) {
                 if (info) console.log('Replacement: ', item.token, item.tag, avg_taggedWords.get(item.token))
