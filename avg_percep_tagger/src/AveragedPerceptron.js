@@ -118,4 +118,4 @@ function train(nr_iter, examples) {
     return model;
 }
 
-module.exports = { AveragedPerceptron, train };
+module.exports = { AveragedPerceptron, shuffle };
