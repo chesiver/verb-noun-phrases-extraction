@@ -26,7 +26,7 @@ class KeywordExtractor {
         return tokenizer.tokenize(sentence);
     }
 
-    static tagSentence(sentence, info = true) {
+    static tagSentence(sentence, info = false) {
         const language = "EN"
         const defaultCategory = 'NN';
         const defaultCategoryCapitalized = 'NNP';
@@ -144,11 +144,11 @@ class KeywordExtractor {
      *            and 'send message' respectively. 
      * @param {} sentence 
      */
-    static extractSubject(sentence) {
+    static extractSubject(sentence, info = false) {
         // sentence = sentence.trim().toLowerCase();
-        console.log(sentence)
+        if (info) console.log(sentence)
         let formattedSentence = this.formatSentence(sentence)
-        console.log(formattedSentence)
+        if (info) console.log(formattedSentence)
         const N = {
             ruleType: 'tokens',
             pattern: '[ {tag:/VBG|NNP|CD|NNS|NN.*?/} ]',
@@ -219,7 +219,7 @@ class KeywordExtractor {
         const rules = [V, N, NCN, NP, PP, PPN, VP]
 
         let chunked = chunker.chunk(formattedSentence, rules);
-        console.log(chunked)
+        if (info) console.log(chunked)
         let trees = this.getPossibleSubjects(chunked);
         trees = this.removeTags(trees);
         return trees;
