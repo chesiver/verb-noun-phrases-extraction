@@ -1,26 +1,26 @@
-const natural = require('natural');
 const chunker = require('pos-chunker');
 const abbreviation = require('./abbreviation.json');
+const tokenization = require('./tokenizers/index');
 const { PerceptronTagger } = require('./avg_percep_tagger/src/PerceptronTagger');
 
 /**
  * Replace to use our modified brill pos tagger
  */
-natural.BrillPOSTagger = require('./brill_pos_tagger/lib/Brill_POS_Tagger');
-natural.Lexicon = require('./brill_pos_tagger/lib/Lexicon');
-natural.RuleSet = require('./brill_pos_tagger/lib/RuleSet');
+const BrillPOSTagger = require('./brill_pos_tagger/lib/Brill_POS_Tagger');
+const Lexicon = require('./brill_pos_tagger/lib/Lexicon');
+const RuleSet = require('./brill_pos_tagger/lib/RuleSet');
 
 const avg_tagger = new PerceptronTagger(true);
 
 class KeywordExtractor {
 
     static tokenizeSentence(sentences) {
-        const tokenizer = new natural.SentenceTokenizer();
+        const tokenizer = new tokenization.SentenceTokenizer();
         return tokenizer.tokenize(sentences);
     }
 
     static tokenizeWord(sentence) {
-        const tokenizer = new natural.RegexpTokenizer({
+        const tokenizer = new tokenization.RegexpTokenizer({
             pattern: /([A-zÀ-ÿ-0-9_:-]+|.|!|\?|'|"|;|,)/i
         });
         return tokenizer.tokenize(sentence);
@@ -30,10 +30,10 @@ class KeywordExtractor {
         const language = "EN"
         const defaultCategory = 'NN';
         const defaultCategoryCapitalized = 'NNP';
-        const lexicon = new natural.Lexicon(language, defaultCategory, defaultCategoryCapitalized);
-        const ruleSetCondition = new natural.RuleSet('CURRENT');
-        const ruleSetDefault = new natural.RuleSet('EN');
-        const tagger = new natural.BrillPOSTagger(lexicon, ruleSetDefault, ruleSetCondition);
+        const lexicon = new Lexicon(language, defaultCategory, defaultCategoryCapitalized);
+        const ruleSetCondition = new RuleSet('CURRENT');
+        const ruleSetDefault = new RuleSet('EN');
+        const tagger = new BrillPOSTagger(lexicon, ruleSetDefault, ruleSetCondition);
         const tokenizedSentence = this.tokenizeWord(sentence);
         // console.log('tokenizedSentence', tokenizedSentence);
         const taggedWords = tagger.tag(tokenizedSentence);
