@@ -1,5 +1,5 @@
 const assert = require('assert');
-const KeywordExtractor = require('../KeywordExtractor')
+const KeywordExtractor = require('../src/KeywordExtractor')
 const testData = require('./test-pairs.json')
 
 describe('Extraction Results Verification: \n', () => {
