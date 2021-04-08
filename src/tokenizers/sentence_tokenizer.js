@@ -22,15 +22,11 @@ THE SOFTWARE.
 
 'use strict'
 
-const Tokenizer = require('./tokenizer')
-const util = require('util')
-
 const DEBUG = false
 
 const SentenceTokenizer = function () {
   Tokenizer.call(this)
 }
-util.inherits(SentenceTokenizer, Tokenizer)
 
 SentenceTokenizer.prototype.tokenize = function (text) {
   // break string up in to sentences based on punctation and quotation marks

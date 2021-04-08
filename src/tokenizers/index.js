@@ -22,10 +22,5 @@ THE SOFTWARE.
 
 'use strict'
 
-exports.AggressiveTokenizer = require('./aggressive_tokenizer')
-exports.CaseTokenizer = require('./tokenizer_case')
 exports.RegexpTokenizer = require('./regexp_tokenizer').RegexpTokenizer
-exports.OrthographyTokenizer = require('./regexp_tokenizer').OrthographyTokenizer
-exports.WordTokenizer = require('./regexp_tokenizer').WordTokenizer
-exports.WordPunctTokenizer = require('./regexp_tokenizer').WordPunctTokenizer
 exports.SentenceTokenizer = require('./sentence_tokenizer')

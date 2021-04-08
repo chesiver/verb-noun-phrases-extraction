@@ -22,8 +22,6 @@ THE SOFTWARE.
 
 'use strict'
 
-const Tokenizer = require('./tokenizer')
-const util = require('util')
 const _ = require('underscore')
 
 // Base Class for RegExp Matching
@@ -40,8 +38,6 @@ const RegexpTokenizer = function (opts) {
   }
 }
 
-util.inherits(RegexpTokenizer, Tokenizer)
-
 RegexpTokenizer.prototype.tokenize = function (s) {
   let results
 
@@ -54,8 +50,6 @@ RegexpTokenizer.prototype.tokenize = function (s) {
 }
 
 exports.RegexpTokenizer = RegexpTokenizer
-
-const orthographyMatchers = require('./orthography_matchers')
 
 /***
  * A tokenizer that accepts an alphabet definition.
@@ -70,8 +64,6 @@ const OrthographyTokenizer = function (options) {
     RegexpTokenizer.call(this, options)
   }
 }
-
-util.inherits(OrthographyTokenizer, RegexpTokenizer)
 
 exports.OrthographyTokenizer = OrthographyTokenizer
 
@@ -88,7 +80,6 @@ const WordTokenizer = function (options) {
   RegexpTokenizer.call(this, options)
 }
 
-util.inherits(WordTokenizer, RegexpTokenizer)
 exports.WordTokenizer = WordTokenizer
 
 /***
@@ -104,5 +95,4 @@ const WordPunctTokenizer = function (options) {
   RegexpTokenizer.call(this, options)
 }
 
-util.inherits(WordPunctTokenizer, RegexpTokenizer)
 exports.WordPunctTokenizer = WordPunctTokenizer
