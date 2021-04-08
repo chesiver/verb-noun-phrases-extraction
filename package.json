@@ -2,7 +2,7 @@
   "name": "tokenizer",
   "version": "1.0.0",
   "description": "Tokenize sentance",
-  "main": "index.js",
+  "main": "KeywordExtractor.js",
   "scripts": {
     "single": "node ./src/test.js",
     "test": "./node_modules/mocha/bin/mocha"
