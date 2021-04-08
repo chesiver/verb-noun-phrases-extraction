@@ -3,7 +3,15 @@ const chunker = require('pos-chunker');
 const abbreviation = require('./abbreviation.json');
 const { PerceptronTagger } = require('./avg_percep_tagger/src/PerceptronTagger');
 
+/**
+ * Replace to use our modified brill pos tagger
+ */
+natural.BrillPOSTagger = require('./brill_pos_tagger/lib/Brill_POS_Tagger');
+natural.Lexicon = require('./brill_pos_tagger/lib/Lexicon');
+natural.RuleSet = require('./brill_pos_tagger/lib/RuleSet');
+
 const avg_tagger = new PerceptronTagger(true);
+
 class KeywordExtractor {
 
     static tokenizeSentence(sentences) {

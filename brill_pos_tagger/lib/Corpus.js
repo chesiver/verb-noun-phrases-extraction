@@ -16,8 +16,8 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var Sample = require('../../classifiers/maxent/Sample');
-var ElementClass = require('../../classifiers/maxent/POS/POS_Element');
+// var Sample = require('../../classifiers/maxent/Sample');
+// var ElementClass = require('../../classifiers/maxent/POS/POS_Element');
 var Lexicon = require('./Lexicon');
 
 const BROWN = 1;

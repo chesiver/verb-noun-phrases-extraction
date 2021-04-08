@@ -4,8 +4,8 @@
   "description": "Tokenize sentance",
   "main": "index.js",
   "scripts": {
-    "single": "bash replace.sh && node test.js",
-    "test": "bash replace.sh && ./node_modules/mocha/bin/mocha"
+    "single": "node test.js",
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "author": "",
   "license": "ISC",
