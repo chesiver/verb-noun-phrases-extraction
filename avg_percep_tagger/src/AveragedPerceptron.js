@@ -81,13 +81,6 @@ class AveragedPerceptron {
         }
     }
 
-    save(path) {
-        fs.writeFileSync(path, JSON.stringify(this.weights));
-    }
-
-    load(path) {
-        this.weights = JSON.parse(fs.readFileSync(path));
-    }
 }
 
 
@@ -126,7 +119,3 @@ function train(nr_iter, examples) {
 }
 
 module.exports = { AveragedPerceptron, train };
-
-if (typeof require !== 'undefined' && require.main === module) {
-    
-}

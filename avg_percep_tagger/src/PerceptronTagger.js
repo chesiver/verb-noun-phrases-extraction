@@ -1,22 +1,23 @@
-const fs = require('fs');
 const { DefaultDict } = require('./DefaultDict');
-const { AveragedPerceptron }  = require('./AveragedPerceptron');
+const { AveragedPerceptron, shuffle }  = require('./AveragedPerceptron');
 
 const START = ['-START-', '-START2-'];
 const END = ['-END-', '-END2-'];
 
-const saved_path = './avg_percep_tagger/model/weights.json';
+const model_path = '../model/weights.json';
 
 class PerceptronTagger {
     
-    constructor(load = false) {
+    constructor() {
         this.model = new AveragedPerceptron();
-        this.tagdict = {};
-        this.classes = new Set();
-        if (load) {
-            this.load();
-        }
         this.freq_counts = null;
+        /**
+         * Load
+         */
+        const [weights, tagdict, classes] = require(model_path);
+        this.model.weights = weights;
+        this.tagdict = tagdict;
+        this.model.classes = this.classes = new Set(classes);
     }
 
     _make_tagdict(sentences) {
@@ -141,31 +142,6 @@ class PerceptronTagger {
         console.log(`Test Result : ${c}/${n}=${c / n}`);
     }
 
-    save() {
-        const content = JSON.stringify([
-            this.model.weights,
-            this.tagdict,
-            [...this.classes],
-        ]);
-        fs.writeFileSync(saved_path, content);
-    }
-
-    load() {
-        const [weights, tagdict, classes] = JSON.parse(fs.readFileSync(saved_path).toString());
-        this.model.weights = weights;
-        this.tagdict = tagdict;
-        this.model.classes = this.classes = new Set(classes);
-    }
-
 }
 
 module.exports = { PerceptronTagger };
-
-/**
- * Directly called
- */
-if (typeof require !== 'undefined' && require.main === module) {
-    console.log('called directly');
-    const tagger = new PerceptronTagger(true);
-    console.log(tagger.tag('get tasks with the subject organize a meeting with pinnacle'.split(' ')))
-} 
