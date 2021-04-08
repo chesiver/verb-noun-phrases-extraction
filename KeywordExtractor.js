@@ -190,7 +190,7 @@ class KeywordExtractor {
             // pattern: ' [ { tag:/VB.?/ } ] ([ { chunk:/PPN/} ][ { chunk:/NP/} ])* [ { chunk:/NP/} ]* [ { chunk:/NP|PPN/ } ]',
             pattern: String.raw`[ { chunk:/V/ } ]
             [ {tag:/PRS/} ]? [ { chunk:/NP|PPN/ } ]+
-            [ {tag:/RB.*/} ]*`,
+            [ {tag:/RB*/} ]*`,
             // pattern: '[ { tag:/VB.?/ } ] [ { chunk:/PPN/} ]? [ { chunk:/NP/} ]+ [ { chunk:/PPN/} ]?',
             // pattern: '[ { tag:/VB.?/ } ] [ { chunk:/PP/ } ]' ,
             // [ { word:have } ] (?=[ { word:/dinner|lunch/ } ])

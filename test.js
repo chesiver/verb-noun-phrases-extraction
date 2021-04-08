@@ -71,6 +71,12 @@ sentences = [
     'Spoke with Mike - was unwilling to continue in scheduling an AR. Setting task for 90 day follow up and reattempt AR.',
     'had a successful AR with Micki. She said she would like something faster maybe and maybe smaller. (But doesn\'t seem possible cuz desktop is other alternative)',
     'called Mickie and got an AR for Monday at 2:30 pm with office mgr. ',
+    'called for Michelle since she said she would be back today but wasn\'t in until noon today until like 4ish. So try back today. ',
+    'called and spoke to Michelle briefly Said she is busy and wont be in office until next Wed of next week so call her next wed and we can set something up. ',
+    'called for Michelle after my email yesterday but she wasn\'t free so left message with staff. ',
+    'emailed Michelle to intro myself and get AR ',
+    'called and reached out to office staff to re-intro myself and ask for Michelle as it seems she\'s office mgr. She\'s not in until 11:30 and her email is ffmc2514@yahoo.com',
+    'Had a follow-up call with Justin re financing term for AC23-95R, AP looking to 3-5 yr lease. AI: follow-up in two week. Schedule reference call for AP.',
 ]
 
 for (const sentence of sentences) {
