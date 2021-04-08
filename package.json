@@ -4,6 +4,7 @@
   "description": "Tokenize sentance",
   "main": "KeywordExtractor.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "single": "node ./src/test.js",
     "test": "./node_modules/mocha/bin/mocha"
   },
