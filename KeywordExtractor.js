@@ -161,7 +161,7 @@ class KeywordExtractor {
 
         const PP = {
             ruleType: 'tokens',
-            pattern: '[ { tag:IN|TO } ] [ { chunk:NP } ]+',
+            pattern: String.raw`[ { tag:IN|TO; word:/\b(?!that\b)\w+/ } ]`,
             result: 'PP'
         };
 
@@ -170,7 +170,7 @@ class KeywordExtractor {
             // pattern: '(?:(?= [ { chunk:/PP/ } ] )[ { chunk:/PP/ } ]|(?![ { chunk:/PP/ } ])[ { chunk:/PP/ } ])',
             // pattern: ' [ {chunk:/PP/} ] [ {chunk:/NP/} ] [ {chunk:/PP/} ]? | [ {chunk:/NP/} ]+',
             // pattern: ' ([ {chunk:/PP/} ]) ([ {chunk:/PP/} ]).*? ',
-            pattern: '[ { chunk:/PP/ } ]',
+            pattern: '[ { chunk:/PP/ } ] [ { chunk:NP } ]+',
             // (?:\D*(\d+)){2}
 
             result: 'PPN'
