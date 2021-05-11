@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -16,7 +17,12 @@ module.exports = {
             fs: false,
             os: false,
             'webworker-threads': false,
-        }
-    }
+        },
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
+        }),
+    ],
 };
 
