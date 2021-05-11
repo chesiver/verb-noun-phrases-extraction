@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "single": "node ./src/test.js",
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "npx karma start"
   },
   "author": "",
   "license": "ISC",
