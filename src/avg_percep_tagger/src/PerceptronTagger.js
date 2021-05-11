@@ -4,16 +4,15 @@ const { AveragedPerceptron, shuffle }  = require('./AveragedPerceptron');
 const START = ['-START-', '-START2-'];
 const END = ['-END-', '-END2-'];
 
-const [weights, tagdict, classes] = require('../model/weights.json');
-
 class PerceptronTagger {
     
-    constructor() {
+    constructor(avgModel) {
         this.model = new AveragedPerceptron();
         this.freq_counts = null;
         /**
          * Load
          */
+        const [weights, tagdict, classes] = avgModel;
         this.model.weights = weights;
         this.tagdict = tagdict;
         this.model.classes = this.classes = new Set(classes);

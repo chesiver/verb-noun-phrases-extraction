@@ -1,4 +1,5 @@
 const KeywordExtractor = require('./KeywordExtractor')
+const fetch = require("node-fetch");
 
 // var natural = require('natural');
 // var tokenizer = new natural.SentenceTokenizer();
@@ -79,11 +80,18 @@ sentences = [
     'Had a follow-up call with Justin re financing term for AC23-95R, AP looking to 3-5 yr lease. AI: follow-up in two week. Schedule reference call for AP.',
 ]
 
-for (const sentence of sentences) {
-    const a = KeywordExtractor.extractSubject(sentence);
-    console.log(a);
-    console.log('-----------------')
-}
+Promise.all([
+    fetch('https://raw.githubusercontent.com/chesiver/verb-noun-phrases-extraction/main/src/brill_pos_tagger/data/English/lexicon_from_posjs.json'),
+    fetch('https://raw.githubusercontent.com/chesiver/verb-noun-phrases-extraction/main/src/avg_percep_tagger/model/weights.json'),
+]).then(async ([res1, res2]) => {
+    const lexicon = await res1.json(), avg_model = await res2.json();
+    await KeywordExtractor.init(lexicon, avg_model);
+    for (const sentence of sentences) {
+        console.log(KeywordExtractor.extractSubject(sentence));
+        console.log('-----------------')
+    }
+})
+
 
 /**
  * Problematic ones

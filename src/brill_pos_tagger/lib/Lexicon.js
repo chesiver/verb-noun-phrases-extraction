@@ -16,25 +16,15 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var englishLexicon = require('../data/English/lexicon_from_posjs.json');
-var dutchLexicon = require('../data/Dutch/brill_Lexicon.json');
+// var englishLexicon = require('../data/English/lexicon_from_posjs.json');
+// var dutchLexicon = require('../data/Dutch/brill_Lexicon.json');
 
 const DEBUG = false;
 
 
 // Constructor creates a Lexicon for language
-function Lexicon(language, defaultCategory, defaultCategoryCapitalised) {
-  switch (language) {
-    case 'EN':
-      this.lexicon = englishLexicon;
-      break;
-    case 'DU':
-      this.lexicon = dutchLexicon;
-      break;
-    default:
-      this.lexicon = dutchLexicon;
-      break;
-  }
+function Lexicon(lexicon, defaultCategory, defaultCategoryCapitalised) {
+  this.lexicon = lexicon;
   if (defaultCategory) {
     this.defaultCategory = defaultCategory;
     if (defaultCategoryCapitalised) {

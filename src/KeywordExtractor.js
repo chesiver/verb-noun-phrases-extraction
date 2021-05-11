@@ -1,17 +1,16 @@
-const chunker = require('pos-chunker');
+const chunker = require('./pos-chunker/index');
 const abbreviation = require('./abbreviation.json');
 const tokenization = require('./tokenizers/index');
 const { PerceptronTagger } = require('./avg_percep_tagger/src/PerceptronTagger');
 
 /**
- * Replace to use our modified brill pos tagger
+ * Replace to use our modified brill pos tagger lib files
  */
 const BrillPOSTagger = require('./brill_pos_tagger/lib/Brill_POS_Tagger');
 const Lexicon = require('./brill_pos_tagger/lib/Lexicon');
 const RuleSet = require('./brill_pos_tagger/lib/RuleSet');
 
-const avg_tagger = new PerceptronTagger(true);
-
+let avg_tagger, brill_tagger, lexicon;
 class KeywordExtractor {
 
     static tokenizeSentence(sentences) {
@@ -27,16 +26,9 @@ class KeywordExtractor {
     }
 
     static tagSentence(sentence, info = false) {
-        const language = "EN"
-        const defaultCategory = 'NN';
-        const defaultCategoryCapitalized = 'NNP';
-        const lexicon = new Lexicon(language, defaultCategory, defaultCategoryCapitalized);
-        const ruleSetCondition = new RuleSet('CURRENT');
-        const ruleSetDefault = new RuleSet('EN');
-        const tagger = new BrillPOSTagger(lexicon, ruleSetDefault, ruleSetCondition);
         const tokenizedSentence = this.tokenizeWord(sentence);
         // console.log('tokenizedSentence', tokenizedSentence);
-        const taggedWords = tagger.tag(tokenizedSentence);
+        const taggedWords = brill_tagger.tag(tokenizedSentence);
         // console.log('taggedWords', taggedWords);
         /**
          * Look up avg perceptron tagger.
@@ -225,4 +217,23 @@ class KeywordExtractor {
         return trees;
     }
 }
-module.exports = KeywordExtractor;
+
+function extractSubject(str) {
+    if (!avg_tagger || !brill_tagger) return null;
+    return KeywordExtractor.extractSubject(str);
+}
+
+async function init(lexiconJson, avgModel) {
+    const defaultCategory = 'NN';
+    const defaultCategoryCapitalized = 'NNP';
+    lexicon = new Lexicon(lexiconJson, defaultCategory, defaultCategoryCapitalized);
+    const ruleSetCondition = new RuleSet('CURRENT');
+    const ruleSetDefault = new RuleSet('EN');
+    brill_tagger = new BrillPOSTagger(lexicon, ruleSetDefault, ruleSetCondition);
+    avg_tagger = new PerceptronTagger(avgModel);
+}
+
+module.exports = {
+    extractSubject,
+    init,
+};
